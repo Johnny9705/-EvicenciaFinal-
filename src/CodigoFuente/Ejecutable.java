@@ -20,23 +20,30 @@ public class Ejecutable {
 		Scanner sc=new Scanner(System.in);
 		int X;
 		System.out.println("Bienvenido");
+		
+		
+		
+		//Se generó  un ciclo para poder controlar los objetos  y los datos que se registren
 	do 
 	{
+		//Se agregan las opciones que se desean que aparescan en el menú
 		System.out.println("Sistemas de envio a sus ordenes, que desea hacer?.");
 		System.out.println("1) Registrarte                                    ");
-		System.out.println("2) Envios.                                        ");
+		System.out.println("2) Entregas.                                        ");
 		System.out.println("3) Salir                                          ");
 		X=sc.nextInt();
 		switch(X) 
 		{
+		
+		//Se crean los  case de cada opción
 		case 1:
 			Registro();
 			break;
 		case 2:
-			Envios();
+			Entregas();
 			break;
 		case 3:
-			System.out.println("Pongame 10 o que.");
+			System.out.println("Ponganos 10 o que XD.");
 			break;
 		default:
 			System.out.println("OPCION INVALIDA.");
@@ -51,13 +58,22 @@ public class Ejecutable {
 		System.out.println("Proporcione un nombre: ");
 		String Nombre=sc.nextLine();
 		C.setNomb(Nombre);
+		System.out.println("Proporcione el apellido paterno: ");
+		String ApePaterno=sc.nextLine();
+		C.setApePaterno(ApePaterno);
+		System.out.println("Proporcione el apellido materno: ");
+		String ApeMaterno=sc.nextLine();
+		C.setApeMaterno(ApeMaterno);
 		System.out.println("Numero Telefonico: ");
-		String  NT=sc.nextLine();
+		String  NumeroTelefonico=sc.nextLine();
+		C.setNumeroTelefonico(NumeroTelefonico);
 		System.out.println("Correo: ");
 		String Correo=sc.nextLine();
+		C.setCorreo(Correo);
 		System.out.println("Direccion: ");
 		String Direccion=sc.nextLine();
-		System.out.println("Seleccione el tipo de envio: ");
+		C.setDireccion(Direccion);
+		System.out.println("Seleccione el tipo de transporte de entrega: ");
 		System.out.println("1) Terrestre");
 		System.out.println("2) Aereo");
 		System.out.println("3) Maritimo");
@@ -107,7 +123,7 @@ public class Ejecutable {
 		String Precio=sc.nextLine();
 		M.setCostoEnvio(Precio);
 	}
-	public static void Envios() {
+	public static void Entregas() {
 		Terrestre T=new Terrestre();
 		Aereo1 A=new Aereo1();
 		Maritimo M=new Maritimo();
@@ -115,6 +131,8 @@ public class Ejecutable {
 		System.out.println(T.getNumSerie());
 		System.out.println("Aereo:      ");
 		System.out.println(A.getNumSerie());
+		System.out.println("Maritimo:      ");
+		System.out.println(M.getNumSerie());
 	}
 	public static boolean ValidaCliente (int IDCliente,ArrayList<Cliente> ListaCliente ) {
 		boolean Resultado=false;
