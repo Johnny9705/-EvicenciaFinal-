@@ -157,7 +157,7 @@ public class Ejecutable {
 	public static void Envio() {
 		System.out.println("Se captura envio ");
 		Envio TecladoE=new Envio();
-		 System.out.println("Catura el ID de cliente a enviar");
+		 System.out.println("Captura el ID de cliente a enviar");
 		int ID = TecladoE.nextInt();
 		 boolean respuestaC = ValidaCliente(ID,ListaCliente);
 		 
