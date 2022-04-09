@@ -1,9 +1,16 @@
 package CodigoFuente;
-import java.util.*;
+
 public class Paquete {
+	String Remitente;
 	String Descripcion;
 	String Destinatario;
-	Date FechaEntrega;
+	public String getRemitente() {
+		return Remitente;
+	}
+	public void setRemitente(String remitente) {
+		Remitente = remitente;
+	}
+	
 	public String getDescripcion() {
 		return Descripcion;
 	}
@@ -16,12 +23,6 @@ public class Paquete {
 	public void setDestinatario(String destinatario) {
 		Destinatario = destinatario;
 	}
-	public Date getFechaEntrega() {
-		return FechaEntrega;
-	}
-	public void setFechaEntrega(Date fechaEntrega) {
-		FechaEntrega = fechaEntrega;
-	}
-	
+		
 	
 }
