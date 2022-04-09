@@ -2,6 +2,7 @@ package CodigoFuente;
 
 import java.util.*;
 public class Transporte {
+	String Placas;
 	String envio;
 	String entrega;
 	Timer tiempo;
@@ -10,6 +11,12 @@ public class Transporte {
 	String DireccionEnvio;
 	
 	
+	public String getPlacas() {
+		return Placas;
+	}
+	public void setPlacas(String placas) {
+		Placas = placas;
+	}
 	public String getEnvio() {
 		return envio;
 	}

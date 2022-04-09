@@ -3,15 +3,23 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
+
+
 public class Ejecutable {
 	
+	
+
+	private static final int IDenvio = 0;
 	public static ArrayList<Cliente> ListaCliente= new ArrayList<Cliente>();
-	public static ArrayList<Terrestre> ListaTerrestre = new ArrayList<Terrestre>();
-	public static ArrayList<Aereo1> ListaAereo1 = new ArrayList<Aereo1>();
-	public static ArrayList<Maritimo> ListaMaritimo = new ArrayList<Maritimo>();
-	public static ArrayList<Entregas> ListaEntregas = new ArrayList<Entregas>();
+	public static ArrayList<Envio> ListaEnvio = new ArrayList<Envio>();
 
 	public static void main(String[] args) {
+		Scanner TecladoE = new Scanner(System.in);
+	
+		
+		boolean respuestaC=false;
+
+		
 		Inicio();
 	}
 	
@@ -29,7 +37,7 @@ public class Ejecutable {
 		//Se agregan las opciones que se desean que aparescan en el menú
 		System.out.println("Sistemas de envio a sus ordenes, que desea hacer?.");
 		System.out.println("1) Registrarte                                    ");
-		System.out.println("2) Entregas.                                        ");
+		System.out.println("2) Envio.                                        ");
 		System.out.println("3) Salir                                          ");
 		X=sc.nextInt();
 		switch(X) 
@@ -40,7 +48,7 @@ public class Ejecutable {
 			Registro();
 			break;
 		case 2:
-			Entregas();
+			Envio();
 			break;
 		case 3:
 			System.out.println("Ponganos 10 o que XD.");
@@ -73,6 +81,8 @@ public class Ejecutable {
 		System.out.println("Direccion: ");
 		String Direccion=sc.nextLine();
 		C.setDireccion(Direccion);
+		
+		 ListaCliente.add(C);
 		System.out.println("Seleccione el tipo de transporte de entrega: ");
 		System.out.println("1) Terrestre");
 		System.out.println("2) Aereo");
@@ -98,50 +108,87 @@ public class Ejecutable {
 	}
 	public static void Terrestre() {
 		Terrestre T=new Terrestre();
-		Scanner sc=new Scanner(System.in);
+		Scanner TecladoT=new Scanner(System.in);
+		System.out.println("Placas: ");
+		String PlacasT=TecladoT.nextLine();
+		T.setPlacas(PlacasT);
 		System.out.println("Numero de serie: ");
-		String X=sc.nextLine();
-		T.setNumSerie(X);
+		String NumST=TecladoT.nextLine();
+		T.setNumSerie(NumST);
 		System.out.println("Precio: ");
-		String Precio=sc.nextLine();
-		T.setCostoEnvi(Precio);
+		String PrecioT=TecladoT.nextLine();
+		T.setCostoEnvi(PrecioT);
 	}
 	public static void Aereo() {
 		Aereo1 A=new Aereo1();
-		Scanner sc=new Scanner(System.in);
+		Scanner TecladoA=new Scanner(System.in);
+		System.out.println("Placas: ");
+		String PlacasA=TecladoA.nextLine();
+		A.setPlacas(PlacasA);
 		System.out.println("Numero de serie: ");
-		String X=sc.nextLine();
-		A.setNumSerie(X);
+		String NumSA=TecladoA.nextLine();
+		A.setNumSerie(NumSA);
 		System.out.println("Precio: ");
-		String Precio=sc.nextLine();
-		A.setCostoEnvio(Precio);
+		String PrecioA=TecladoA.nextLine();
+		A.setCostoEnvio(PrecioA);
 	}
 	public static void Maritimo() {
 		Maritimo M=new Maritimo();
-		Scanner sc=new Scanner(System.in);
+		Scanner TecladoM=new Scanner(System.in);
+		System.out.println("Placas: ");
+		String PlacasM=TecladoM.nextLine();
+		M.setPlacas(PlacasM);
+		System.out.println("Numero de serie: ");
+		String NumSM=TecladoM.nextLine();
+		M.setNumSerie(NumSM);
 		System.out.println("Precio: ");
-		String Precio=sc.nextLine();
-		M.setCostoEnvio(Precio);
+		String PrecioM=TecladoM.nextLine();
+		M.setCostoEnvio(PrecioM);
 	}
-	public static void Entregas() {
-		Terrestre T=new Terrestre();
-		Aereo1 A=new Aereo1();
-		Maritimo M=new Maritimo();
+	public static void Envio() {
+		System.out.println("Se captura envio ");
+		Envio TecladoE=new Envio();
+		 System.out.println("Catura el ID de cliente a enviar");
+		int ID = TecladoE.nextInt();
+		 boolean respuestaC = ValidaCliente(ID,ListaCliente);
+		 
+		 if(respuestaC==true) {
+			 Envio E = new Envio();
+			
+			E.setIDenvio(IDenvio);
+            ListaEnvio.add(E);
+		 }
+		Terrestre TecladoT=new Terrestre();
+		Aereo1 TecladoA=new Aereo1();
+		Maritimo TecladoM=new Maritimo();
 		System.out.println("Terrestres: ");
-		System.out.println(T.getNumSerie());
+		System.out.println(TecladoT.getPlacas());
+		System.out.println(TecladoT.getNumSerie());
 		System.out.println("Aereo:      ");
-		System.out.println(A.getNumSerie());
+		System.out.println(TecladoA.getPlacas());
+		System.out.println(TecladoA.getNumSerie());
 		System.out.println("Maritimo:      ");
-		System.out.println(M.getNumSerie());
+		System.out.println(TecladoM.getNumSerie());
+		System.out.println(TecladoM.getNumSerie());
+		
+		
+		 
 	}
-	public static boolean ValidaCliente (int IDCliente,ArrayList<Cliente> ListaCliente ) {
+	public static boolean ValidaCliente (int ID,ArrayList<Cliente> ListaCliente ) {
 		boolean Resultado=false;
 		for(int x=0;x<ListaCliente.size();x++) {
-			if (ListaCliente.get(x).getID()==IDCliente) {
+			if (ListaCliente.get(x).getID()==ID) {
 				Resultado=true;
 			}
 		}	
 		return Resultado;
 		
+	
+	
+		
+		
 	}
-}
+	
+	
+		
+	}

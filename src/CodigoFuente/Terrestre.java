@@ -32,6 +32,10 @@ public class Terrestre extends Transporte{
 	public void setNumSerie(String numSerie) {
 		NumSerie = numSerie;
 	}
+	public int getNumS() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 }

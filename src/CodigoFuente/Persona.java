@@ -19,13 +19,7 @@ public class Persona {
 	String NumeroTelefonico;
 	String Correo;
 	String Direccion;
-	int Edad;
-	String Sexo;
-	static Date fechaNaci;
-	double Altura;
-	String Sangre;
-	double Salario;
-	static int CodigoPost;
+
 	
 	
 	//Se utilizan los métodos get y set para obtener y devolver la información 
@@ -68,48 +62,5 @@ public class Persona {
 	public void setDireccion(String direccion) {
 		Direccion = direccion;
 	}
-	public int getEdad() {
-		return Edad;
-	}
-	public void setEdad(int edad) {
-		Edad = edad;
-	}
-	public String getSexo() {
-		return Sexo;
-	}
-	public void setSexo(String sexo) {
-		Sexo = sexo;
-	}
-	public static Date getFechaNaci() {
-		return fechaNaci;
-	}
-	public static void setFechaNaci(Date fechaNaci) {
-		Persona.fechaNaci = fechaNaci;
-	}
-	public double getAltura() {
-		return Altura;
-	}
-	public void setAltura(double altura) {
-		Altura = altura;
-	}
-	public String getSangre() {
-		return Sangre;
-	}
-	public void setSangre(String sangre) {
-		Sangre = sangre;
-	}
-	public double getSalario() {
-		return Salario;
-	}
-	public void setSalario(double salario) {
-		Salario = salario;
-	}
-	public static int getCodigoPost() {
-		return CodigoPost;
-	}
-	public static void setCodigoPost(int codigoPost) {
-		CodigoPost = codigoPost;
-	}
-	
 	
 }

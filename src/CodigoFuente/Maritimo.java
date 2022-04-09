@@ -30,6 +30,10 @@ public class Maritimo extends Transporte{
 	public void setNumSerie(String numSerie) {
 		NumSerie = numSerie;
 	}
+	public int NSerie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 
 }

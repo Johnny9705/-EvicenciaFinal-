@@ -26,6 +26,10 @@ public class Aereo1 extends Transporte{
 	public void setNumSerie(String numSerie) {
 		NumSerie = numSerie;
 	}
+	public int NS() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 	
 

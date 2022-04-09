@@ -2,7 +2,7 @@ package CodigoFuente;
 
 public class Envio {
 	int IDenvio;
-	int IDCliente;
+	int ID;
 	
 	public int getIDenvio() {
 		return IDenvio;
@@ -10,12 +10,17 @@ public class Envio {
 	public void setIDenvio(int iDenvio) {
 		IDenvio= iDenvio;
 	}
-	public int getIDCliente() {
-		return IDCliente;
+	public int getID() {
+		return ID;
 	}
-	public void setIDCliente(int iDCliente) {
-		IDCliente = iDCliente;
+	public void setID(int iD) {
+		ID = iD;
 	}
+	public int nextInt() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 	
 	
 }
